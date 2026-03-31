@@ -12,39 +12,96 @@ const DAY_SLOTS = { Monday: TIME_SLOTS_FULL, Tuesday: TIME_SLOTS_FULL, Wednesday
 const ALL_TIMES = TIME_SLOTS_FULL;
 
 const CLIENTS = [
-  { name: "Greg Pierce", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Kirksey Taylor", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Nate Garber", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Jack Palms", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "David Spika", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Paulo", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Ana Ambrosi", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Marnie", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Rachael & Lindsay", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Rick", type: "fixed", sessions: 2, duration: 25, phone: "", used: 10, purchased: 30 },
-  { name: "Melanie Paul", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Ryan Young", type: "flex", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Ryan Culpepper", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Andrew Welker", type: "flex", sessions: 3, phone: "", used: 10, purchased: 30 },
-  { name: "Madison Palms", type: "flex", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Candy Streit", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Aric McCumber", type: "flex", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Kasey Moore", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Patti", type: "fixed", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Kate McCumber", type: "flex", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Jacque", type: "flex", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Brandon Crow", type: "flex", sessions: 2, phone: "", used: 10, purchased: 30 },
-  { name: "Jill Harvey", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Susan Crow", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Autumn Moss", type: "fixed", sessions: 3, duration: 25, phone: "", used: 10, purchased: 30 },
-  { name: "Cole Crow", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Lane Crow", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Leah & Leigh Johnson", type: "fixed", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Nicole Stewart", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Jack Charles", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Kate & Jill Harvey", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
-  { name: "Molly & Brooke", type: "flex", sessions: 1, phone: "", used: 10, purchased: 30 },
+  { name: "Greg Pierce", type: "fixed", sessions: 2, phone: "405-412-6104", used: 10, purchased: 30 },
+  { name: "Kirksey Taylor", type: "fixed", sessions: 1, phone: "662-871-8151", used: 10, purchased: 30 },
+  { name: "Nate Garber", type: "fixed", sessions: 2, phone: "404-925-9018", used: 10, purchased: 30 },
+  { name: "Jack Palms", type: "fixed", sessions: 2, phone: "214-354-1468", used: 10, purchased: 30 },
+  { name: "David Spika", type: "fixed", sessions: 1, phone: "214-208-4260", used: 10, purchased: 30 },
+  { name: "Paulo", type: "fixed", sessions: 2, phone: "214-274-3799", used: 10, purchased: 30 },
+  { name: "Ana Ambrosi", type: "fixed", sessions: 1, phone: "214-551-7583", used: 10, purchased: 30 },
+  { name: "Marnie", type: "fixed", sessions: 2, phone: "214-991-5263", used: 10, purchased: 30 },
+  { name: "Rachael & Lindsay", type: "fixed", sessions: 2, phone: "214-886-8343", phone2: "214-707-3614", used: 10, purchased: 30 },
+  { name: "Rick", type: "fixed", sessions: 2, duration: 25, phone: "214-914-7546", used: 10, purchased: 30 },
+  { name: "Melanie Paul", type: "fixed", sessions: 1, phone: "408-218-6104", used: 10, purchased: 30 },
+  { name: "Ryan Young", type: "flex", sessions: 2, phone: "817-600-7450", used: 10, purchased: 30 },
+  { name: "Ryan Culpepper", type: "fixed", sessions: 1, phone: "405-833-8967", used: 10, purchased: 30 },
+  { name: "Andrew Welker", type: "flex", sessions: 3, phone: "469-396-7921", used: 10, purchased: 30 },
+  { name: "Madison Palms", type: "flex", sessions: 2, phone: "214-704-5090", used: 10, purchased: 30 },
+  { name: "Candy Streit", type: "fixed", sessions: 2, phone: "214-803-9592", used: 10, purchased: 30 },
+  { name: "Aric McCumber", type: "flex", sessions: 2, phone: "580-485-0085", used: 10, purchased: 30 },
+  { name: "Kasey Moore", type: "fixed", sessions: 1, phone: "361-522-8280", used: 10, purchased: 30 },
+  { name: "Patti", type: "fixed", sessions: 2, phone: "832-259-2950", used: 10, purchased: 30 },
+  { name: "Kate McCumber", type: "flex", sessions: 2, phone: "918-760-9426", used: 10, purchased: 30 },
+  { name: "Jacque", type: "flex", sessions: 2, phone: "214-708-9559", used: 10, purchased: 30 },
+  { name: "Brandon Crow", type: "flex", sessions: 2, phone: "214-535-8662", used: 10, purchased: 30 },
+  { name: "Jill Harvey", type: "flex", sessions: 1, phone: "214-435-5495", used: 10, purchased: 30 },
+  { name: "Susan Crow", type: "flex", sessions: 1, phone: "214-517-2957", used: 10, purchased: 30 },
+  { name: "Autumn Moss", type: "fixed", sessions: 3, duration: 25, phone: "512-970-8143", used: 10, purchased: 30 },
+  { name: "Cole Crow", type: "flex", sessions: 1, phone: "214-914-8733", used: 10, purchased: 30 },
+  { name: "Lane Crow", type: "flex", sessions: 1, phone: "214-435-7322", used: 10, purchased: 30 },
+  { name: "Leah & Leigh Johnson", type: "fixed", sessions: 1, phone: "214-755-5041", used: 10, purchased: 30 },
+  { name: "Nicole Stewart", type: "flex", sessions: 1, phone: "214-516-5750", used: 10, purchased: 30 },
+  { name: "Jack Charles", type: "flex", sessions: 1, phone: "214-803-4090", used: 10, purchased: 30 },
+  { name: "Kate & Jill Harvey", type: "flex", sessions: 1, phone: "214-435-5495", used: 10, purchased: 30 },
+  { name: "Molly & Brooke", type: "flex", sessions: 1, phone: "972-571-2060", phone2: "817-881-0927", used: 10, purchased: 30 },
 ];
+
+// ===================== PRICING & PAYMENT =====================
+const PAYMENT = { zelle: "chipphillips89@gmail.com", venmo: "@chip-phillips-2" };
+
+const PKG_PERSONAL = [
+  { label: "1 Session", count: 1, price: 170, cat: "Personal Training" },
+  { label: "10-Pack", count: 10, price: 1490, cat: "Personal Training" },
+  { label: "20-Pack", count: 20, price: 2660, cat: "Personal Training" },
+  { label: "30-Pack", count: 30, price: 3570, cat: "Personal Training" },
+];
+const PKG_SHORT = [
+  { label: "25-Min Session", count: 1, price: 93, cat: "Short Sessions" },
+  { label: "25-Min 20-Pack", count: 20, price: 1950, cat: "Short Sessions" },
+];
+const PKG_EXEC = [
+  { label: "Executive 1:1 Session", count: 1, price: 295, cat: "Executive" },
+  { label: "Executive Retainer (Low)", count: 8, price: 2200, cat: "Executive", monthly: true },
+  { label: "Executive Retainer (High)", count: 8, price: 3000, cat: "Executive", monthly: true },
+];
+const PKG_COUPLES = [
+  { label: "Couples 30-Pack", count: 30, price: 4590, cat: "Partner Training", split: 2 },
+];
+const PKG_TRIO = [
+  { label: "Group of 3 — 30-Pack", count: 30, price: 5550, cat: "Group Training", split: 3 },
+];
+const PKG_REMOTE = [
+  { label: "CPF Competitive", count: 1, price: 500, cat: "Remote Coaching", monthly: true },
+  { label: "CPF Intermediate", count: 1, price: 405, cat: "Remote Coaching", monthly: true },
+  { label: "CPF Custom", count: 1, price: 315, cat: "Remote Coaching", monthly: true },
+  { label: "PT Supplemental Add-On", count: 1, price: 99, cat: "Remote Coaching", monthly: true },
+];
+
+// "couple" = 50%, "trio" = 33%
+const GROUP_CLIENTS = { "Rachael & Lindsay": "couple" };
+function getGroupType(name) { return GROUP_CLIENTS[name] || null; }
+function isGroupClient(name) { return !!GROUP_CLIENTS[name]; }
+function getGroupDivisor(name) { const t = getGroupType(name); return t === "couple" ? 2 : t === "trio" ? 3 : 1; }
+
+function getPackagesForClient(client) {
+  const gt = getGroupType(client.name);
+  if (client.duration === 25) return PKG_SHORT;
+  if (gt === "couple") return [...PKG_PERSONAL, ...PKG_COUPLES];
+  if (gt === "trio") return [...PKG_PERSONAL, ...PKG_TRIO];
+  return [...PKG_PERSONAL, ...PKG_EXEC, ...PKG_COUPLES, ...PKG_TRIO, ...PKG_REMOTE];
+}
+
+function buildInvoiceText(clientName, pkg, groupType) {
+  const firstName = clientName.split(" ")[0].split("&")[0].trim();
+  const divisor = pkg.split || (groupType === "couple" ? 2 : groupType === "trio" ? 3 : 1);
+  const clientTotal = divisor > 1 ? Math.round(pkg.price / divisor) : pkg.price;
+  const totalStr = "$" + clientTotal.toLocaleString();
+  const mo = pkg.monthly ? "/month" : "";
+  let splitLine = "";
+  if (divisor === 2) splitLine = `\nFull package value: $${pkg.price.toLocaleString()} — your half: ${totalStr}`;
+  else if (divisor === 3) splitLine = `\nFull package value: $${pkg.price.toLocaleString()} — your share (1/3): ${totalStr}`;
+  return `Hey ${firstName}! You're getting close to using up your sessions — time to re-up!\n\n${pkg.label}: ${totalStr}${mo}${splitLine}\n\nPay via:\nZelle: ${PAYMENT.zelle}\nVenmo: ${PAYMENT.venmo}\n\nThanks!`;
+}
 
 const DEFAULT_SCHEDULE = {
   // MONDAY
@@ -185,58 +242,120 @@ function loadData(key, fallback) {
   } catch(e) { return fallback; }
 }
 
+
 // ===================== MAIN APP =====================
 export default function App() {
   const [appView, setAppView] = useState("schedule");
   const [schedule, setSchedule] = useState(DEFAULT_SCHEDULE);
-  const [clients, setClients] = useState(CLIENTS);
   const [weekLabel, setWeekLabel] = useState(getMonday);
+  const [nextSchedule, setNextSchedule] = useState(null);
+  const [nextWeekLabel, setNextWeekLabel] = useState("");
+  const [clients, setClients] = useState(CLIENTS);
   const [sundayNotes, setSundayNotes] = useState({});
   const [sundaySent, setSundaySent] = useState(new Set());
+  const [nextSundayNotes, setNextSundayNotes] = useState({});
+  const [nextSundaySent, setNextSundaySent] = useState(new Set());
+  const [weekHistory, setWeekHistory] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
-  // Load saved data on mount
   useEffect(() => {
-    const saved = loadData("pt-schedule", null);
-    const savedWeek = loadData("pt-week", null);
-    const savedClients = loadData("pt-clients", null);
-    const savedNotes = loadData("pt-sunday-notes", null);
-    const savedSent = loadData("pt-sunday-sent", null);
-    if (saved) setSchedule(saved);
-    if (savedWeek) setWeekLabel(savedWeek);
-    if (savedClients) setClients(savedClients);
-    if (savedNotes) setSundayNotes(savedNotes);
-    if (savedSent) setSundaySent(new Set(savedSent));
+    const s = loadData("pt-schedule", null); if (s) setSchedule(s);
+    const w = loadData("pt-week", null); if (w) setWeekLabel(w);
+    const ns = loadData("pt-next-schedule", null); if (ns) setNextSchedule(ns);
+    const nw = loadData("pt-next-week", null); if (nw) setNextWeekLabel(nw);
+    const c = loadData("pt-clients", null); if (c) setClients(c);
+    const sn = loadData("pt-sunday-notes", null); if (sn) setSundayNotes(sn);
+    const ss = loadData("pt-sunday-sent", null); if (ss) setSundaySent(new Set(ss));
+    const nsn = loadData("pt-next-sunday-notes", null); if (nsn) setNextSundayNotes(nsn);
+    const nss = loadData("pt-next-sunday-sent", null); if (nss) setNextSundaySent(new Set(nss));
+    const h = loadData("pt-week-history", null); if (h) setWeekHistory(h);
     setLoaded(true);
   }, []);
 
-  // Save on every change
   useEffect(() => { if (loaded) saveData("pt-schedule", schedule); }, [schedule, loaded]);
   useEffect(() => { if (loaded) saveData("pt-week", weekLabel); }, [weekLabel, loaded]);
+  useEffect(() => { if (loaded) saveData("pt-next-schedule", nextSchedule); }, [nextSchedule, loaded]);
+  useEffect(() => { if (loaded) saveData("pt-next-week", nextWeekLabel); }, [nextWeekLabel, loaded]);
   useEffect(() => { if (loaded) saveData("pt-clients", clients); }, [clients, loaded]);
   useEffect(() => { if (loaded) saveData("pt-sunday-notes", sundayNotes); }, [sundayNotes, loaded]);
   useEffect(() => { if (loaded) saveData("pt-sunday-sent", [...sundaySent]); }, [sundaySent, loaded]);
+  useEffect(() => { if (loaded) saveData("pt-next-sunday-notes", nextSundayNotes); }, [nextSundayNotes, loaded]);
+  useEffect(() => { if (loaded) saveData("pt-next-sunday-sent", [...nextSundaySent]); }, [nextSundaySent, loaded]);
+  useEffect(() => { if (loaded) saveData("pt-week-history", weekHistory); }, [weekHistory, loaded]);
+
+  function advanceWeekLabel(label) {
+    try {
+      const d = new Date(label);
+      if (!isNaN(d.getTime())) { d.setDate(d.getDate() + 7); return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
+    } catch(e) {}
+    return label + " (next)";
+  }
+
+  function copyScheduleForward(sched) {
+    const n = {};
+    Object.entries(sched).forEach(([key, entry]) => {
+      if (entry.status === "blocked" || entry.status === "softblocked") n[key] = { ...entry };
+      else if (entry.status !== "cancelled") n[key] = { ...entry, status: "pending" };
+    });
+    return n;
+  }
+
+  const startNextWeek = () => {
+    setNextSchedule(copyScheduleForward(schedule));
+    setNextWeekLabel(advanceWeekLabel(weekLabel));
+    setNextSundayNotes({});
+    setNextSundaySent(new Set());
+  };
+
+  const closeCurrentWeek = () => {
+    if (confirm("Close out this week? It will be archived to History and next week becomes the live schedule.")) {
+      const archived = {
+        weekLabel, schedule: { ...schedule }, savedAt: new Date().toISOString(),
+        sessionCount: Object.values(schedule).filter(s => s.status !== "blocked" && s.status !== "softblocked").length,
+        confirmedCount: Object.values(schedule).filter(s => s.status === "confirmed").length,
+      };
+      setWeekHistory(prev => [archived, ...prev]);
+      if (nextSchedule) {
+        setSchedule(nextSchedule); setWeekLabel(nextWeekLabel);
+        setSundayNotes(nextSundayNotes); setSundaySent(nextSundaySent);
+      } else {
+        setSchedule(copyScheduleForward(schedule)); setWeekLabel(advanceWeekLabel(weekLabel));
+        setSundayNotes({}); setSundaySent(new Set());
+      }
+      setNextSchedule(null); setNextWeekLabel(""); setNextSundayNotes({}); setNextSundaySent(new Set());
+    }
+  };
+
+  const loadPastWeek = (entry) => { setSchedule(entry.schedule); setWeekLabel(entry.weekLabel); setAppView("schedule"); };
 
   if (!loaded) return <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", fontFamily: "system-ui" }}>Loading...</div>;
 
   return (
     <div style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif", background: "#F5F5F0", minHeight: "100vh", color: "#1a1a1a", paddingBottom: 70 }}>
       {appView === "schedule" && (
-        <ScheduleView schedule={schedule} setSchedule={setSchedule} clients={clients} setClients={setClients} weekLabel={weekLabel} setWeekLabel={setWeekLabel} />
+        <ScheduleView
+          schedule={schedule} setSchedule={setSchedule} weekLabel={weekLabel} setWeekLabel={setWeekLabel}
+          nextSchedule={nextSchedule} setNextSchedule={setNextSchedule} nextWeekLabel={nextWeekLabel} setNextWeekLabel={setNextWeekLabel}
+          clients={clients} setClients={setClients}
+          startNextWeek={startNextWeek} closeCurrentWeek={closeCurrentWeek}
+        />
       )}
       {appView === "send" && (
-        <SundaySendView schedule={schedule} clients={clients} notes={sundayNotes} setNotes={setSundayNotes} sent={sundaySent} setSent={setSundaySent} weekLabel={weekLabel} />
+        <SundaySendView
+          schedule={schedule} weekLabel={weekLabel} notes={sundayNotes} setNotes={setSundayNotes} sent={sundaySent} setSent={setSundaySent}
+          nextSchedule={nextSchedule} nextWeekLabel={nextWeekLabel} nextNotes={nextSundayNotes} setNextNotes={setNextSundayNotes} nextSent={nextSundaySent} setNextSent={setNextSundaySent}
+          clients={clients}
+        />
       )}
-      {appView === "clients" && (
-        <ClientsView clients={clients} setClients={setClients} schedule={schedule} />
-      )}
+      {appView === "clients" && <ClientsView clients={clients} setClients={setClients} schedule={schedule} />}
+      {appView === "history" && <HistoryView weekHistory={weekHistory} setWeekHistory={setWeekHistory} clients={clients} onLoad={loadPastWeek} />}
 
-      {/* Bottom nav */}
       <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "1px solid #E0E0E0", display: "flex", zIndex: 90 }}>
         {[
           { key: "schedule", icon: "📅", label: "Schedule" },
           { key: "send", icon: "💬", label: "Sunday Send" },
           { key: "clients", icon: "👥", label: "Clients" },
+          { key: "history", icon: "📂", label: "History" },
         ].map(tab => (
           <button key={tab.key} onClick={() => setAppView(tab.key)} style={{
             flex: 1, padding: "8px 0", border: "none", background: appView === tab.key ? "#E3F2FD" : "white",
@@ -252,64 +371,74 @@ export default function App() {
 }
 
 // ===================== SCHEDULE VIEW =====================
-function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, setWeekLabel }) {
+function ScheduleView({ schedule, setSchedule, weekLabel, setWeekLabel, nextSchedule, setNextSchedule, nextWeekLabel, setNextWeekLabel, clients, setClients, startNextWeek, closeCurrentWeek }) {
+  const [viewingWeek, setViewingWeek] = useState("current");
+  const isNext = viewingWeek === "next" && nextSchedule;
+  const activeSchedule = isNext ? nextSchedule : schedule;
+  const setActiveSchedule = isNext ? setNextSchedule : setSchedule;
+  const activeWeekLabel = isNext ? nextWeekLabel : weekLabel;
+
   const [panelMode, setPanelMode] = useState(null);
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [search, setSearch] = useState("");
   const [editingWeek, setEditingWeek] = useState(false);
   const [selectedOpenSlots, setSelectedOpenSlots] = useState([]);
   const [rescheduleNote, setRescheduleNote] = useState("");
+  const [customBlockLabel, setCustomBlockLabel] = useState("");
+  const [editTimeValue, setEditTimeValue] = useState("");
+  const [invoiceClient, setInvoiceClient] = useState(null);
+  const [dragItem, setDragItem] = useState(null);
+  const [dragClient, setDragClient] = useState(null);
 
-  const scheduledClients = new Set(Object.values(schedule).filter(s => s.status !== "blocked" && s.status !== "softblocked").map(s => s.client));
+  const scheduledClients = new Set(Object.values(activeSchedule).filter(s => s.status !== "blocked" && s.status !== "softblocked").map(s => s.client));
   const unscheduled = clients.filter(c => !scheduledClients.has(c.name));
-  const sessionCounts = {};
-  Object.values(schedule).forEach(({ client, status }) => { if (status !== "blocked" && status !== "softblocked") sessionCounts[client] = (sessionCounts[client] || 0) + 1; });
-  const totalSessions = Object.values(schedule).filter(s => s.status !== "blocked" && s.status !== "softblocked").length;
-  const confirmedCount = Object.values(schedule).filter(s => s.status === "confirmed").length;
-  const pendingCount = Object.values(schedule).filter(s => s.status === "pending").length;
-  const blockedCount = Object.values(schedule).filter(s => s.status === "blocked" || s.status === "softblocked").length;
-  const { open: openSlots, softBlocked: softBlockedSlots } = getOpenSlots(schedule, clients);
+  const totalSessions = Object.values(activeSchedule).filter(s => s.status !== "blocked" && s.status !== "softblocked").length;
+  const confirmedCount = Object.values(activeSchedule).filter(s => s.status === "confirmed").length;
+  const pendingCount = Object.values(activeSchedule).filter(s => s.status === "pending").length;
+  const { open: openSlots, softBlocked: softBlockedSlots } = getOpenSlots(activeSchedule, clients);
   const filteredClients = clients.filter(c => c.name.toLowerCase().includes(search.toLowerCase()));
 
   const getClientBalance = (name) => {
     const c = clients.find(cl => cl.name === name);
     return c ? { used: c.used || 0, purchased: c.purchased || 30 } : { used: 0, purchased: 30 };
   };
-
   const adjustUsed = (name, delta) => {
     setClients(prev => prev.map(c => c.name === name ? { ...c, used: Math.max(0, (c.used || 0) + delta) } : c));
   };
 
   const handleSlotClick = (key) => {
     setSelectedSlot(key); setSearch(""); setSelectedOpenSlots([]); setRescheduleNote(""); setCustomBlockLabel("");
-    const entry = schedule[key];
-    if (entry && (entry.status === "blocked" || entry.status === "softblocked")) {
-      setPanelMode("block-actions");
-    } else if (entry) {
-      setPanelMode("actions");
-    } else {
-      setPanelMode("empty-actions");
-    }
+    const entry = activeSchedule[key];
+    if (entry && (entry.status === "blocked" || entry.status === "softblocked")) setPanelMode("block-actions");
+    else if (entry) setPanelMode("actions");
+    else setPanelMode("empty-actions");
   };
-  const [customBlockLabel, setCustomBlockLabel] = useState("");
-  const [editTimeValue, setEditTimeValue] = useState("");
-  const assignClient = (name) => { setSchedule(prev => ({ ...prev, [selectedSlot]: { client: name, status: "pending" } })); closePanel(); };
-  const clearSlot = (key) => setSchedule(prev => { const n = { ...prev }; delete n[key]; return n; });
+
+  const assignClient = (name) => { setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { client: name, status: "pending" } })); closePanel(); };
+  const clearSlot = (key) => setActiveSchedule(prev => { const n = { ...prev }; delete n[key]; return n; });
+
   const cycleStatus = (key, e) => {
     e.stopPropagation();
-    const entry = schedule[key]; if (!entry) return;
+    const entry = activeSchedule[key]; if (!entry) return;
     const order = ["confirmed", "pending", "cancelled"];
     const oldStatus = entry.status;
     const newStatus = order[(order.indexOf(oldStatus) + 1) % 3];
-    // Count up: add 1 when confirming, subtract 1 when un-confirming
-    if (newStatus === "confirmed" && oldStatus !== "confirmed") adjustUsed(entry.client, 1);
+    if (newStatus === "confirmed" && oldStatus !== "confirmed") {
+      adjustUsed(entry.client, 1);
+      const ci = clients.find(c => c.name === entry.client);
+      if (ci) {
+        const remaining = (ci.purchased || 30) - ((ci.used || 0) + 1);
+        if (remaining === 1) setTimeout(() => setInvoiceClient(ci.name), 300);
+      }
+    }
     if (oldStatus === "confirmed" && newStatus !== "confirmed") adjustUsed(entry.client, -1);
-    setSchedule(prev => ({ ...prev, [key]: { ...prev[key], status: newStatus } }));
+    setActiveSchedule(prev => ({ ...prev, [key]: { ...prev[key], status: newStatus } }));
   };
+
   const closePanel = () => { setPanelMode(null); setSelectedSlot(null); setSelectedOpenSlots([]); setRescheduleNote(""); setCustomBlockLabel(""); };
 
   const buildRescheduleText = () => {
-    const entry = schedule[selectedSlot]; if (!entry) return "";
+    const entry = activeSchedule[selectedSlot]; if (!entry) return "";
     const firstName = entry.client.split(" ")[0].split("&")[0].trim();
     const [origDay, origTime] = selectedSlot.split("-");
     const displayTime = entry.customTime || origTime;
@@ -320,16 +449,16 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
   };
 
   const handleSendReschedule = () => {
-    const entry = schedule[selectedSlot]; if (!entry) return;
+    const entry = activeSchedule[selectedSlot]; if (!entry) return;
     const client = clients.find(c => c.name === entry.client);
     window.open(`sms:${client?.phone || ""}&body=${encodeURIComponent(buildRescheduleText())}`, "_blank");
-    setSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], status: "cancelled" } }));
+    setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], status: "cancelled" } }));
     closePanel();
   };
 
   const handleConfirmReschedule = (newKey) => {
-    const entry = schedule[selectedSlot]; if (!entry) return;
-    setSchedule(prev => { const n = { ...prev }; n[newKey] = { client: entry.client, status: "confirmed" }; delete n[selectedSlot]; return n; });
+    const entry = activeSchedule[selectedSlot]; if (!entry) return;
+    setActiveSchedule(prev => { const n = { ...prev }; n[newKey] = { client: entry.client, status: "confirmed" }; delete n[selectedSlot]; return n; });
     closePanel();
   };
 
@@ -341,99 +470,93 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
     });
   };
 
-  const newWeek = () => {
-    if (confirm("Start a new week? This will copy your current schedule forward with all sessions set to pending.")) {
-      // Copy current schedule, reset all client sessions to pending, keep blocks as-is
-      const newSched = {};
-      Object.entries(schedule).forEach(([key, entry]) => {
-        if (entry.status === "blocked" || entry.status === "softblocked") {
-          newSched[key] = { ...entry };
-        } else if (entry.status !== "cancelled") {
-          newSched[key] = { ...entry, status: "pending" };
-        }
-        // cancelled sessions are dropped — they don't carry forward
-      });
-      setSchedule(newSched);
-      // Advance week label by 7 days
-      try {
-        const d = new Date(weekLabel);
-        if (!isNaN(d.getTime())) {
-          d.setDate(d.getDate() + 7);
-          setWeekLabel(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }));
-        } else {
-          setWeekLabel(weekLabel + " (next)");
-        }
-      } catch(e) {
-        setWeekLabel(weekLabel + " (next)");
-      }
-      // Reset Sunday Send tracking for the new week
-      saveData("pt-sunday-sent", []);
+  const handleDrop = (targetKey, sourceKey) => {
+    if (dragClient) {
+      setActiveSchedule(prev => ({ ...prev, [targetKey]: { client: dragClient, status: "pending" } }));
+      setDragClient(null);
+      return;
     }
-  };
-
-  const handleDrop = (targetKey, dragKey) => {
-    if (!dragKey || dragKey === targetKey) return;
-    setSchedule(prev => {
-      const next = { ...prev }; const dd = next[dragKey]; const td = next[targetKey];
-      if (dd && td) { next[dragKey] = td; next[targetKey] = dd; }
-      else if (dd) { next[targetKey] = dd; delete next[dragKey]; }
+    if (!sourceKey || sourceKey === targetKey) return;
+    setActiveSchedule(prev => {
+      const next = { ...prev }; const dd = next[sourceKey]; const td = next[targetKey];
+      if (dd && td) { next[sourceKey] = td; next[targetKey] = dd; }
+      else if (dd) { next[targetKey] = dd; delete next[sourceKey]; }
       return next;
     });
   };
 
-  const [dragItem, setDragItem] = useState(null);
-
   return (
     <>
-      <div style={{ background: "linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 100%)", padding: "16px 20px 12px", color: "white" }}>
+      {/* HEADER */}
+      <div style={{ background: isNext ? "linear-gradient(135deg, #1a3a1a 0%, #2a5a2a 100%)" : "linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 100%)", padding: "16px 20px 12px", color: "white" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
           <div>
-            <h1 style={{ margin: 0, fontSize: 20, fontWeight: 700 }}>Weekly Schedule</h1>
+            <h1 style={{ margin: 0, fontSize: 20, fontWeight: 700 }}>{isNext ? "Next Week" : "This Week"}</h1>
             {editingWeek ? (
-              <input autoFocus value={weekLabel} onChange={e => setWeekLabel(e.target.value)}
+              <input autoFocus value={activeWeekLabel} onChange={e => (isNext ? setNextWeekLabel : setWeekLabel)(e.target.value)}
                 onBlur={() => setEditingWeek(false)} onKeyDown={e => e.key === "Enter" && setEditingWeek(false)}
                 style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 4, color: "white", padding: "2px 8px", fontSize: 14, fontWeight: 600, marginTop: 4 }} />
             ) : (
-              <span onClick={() => setEditingWeek(true)} style={{ fontSize: 14, opacity: 0.9, cursor: "pointer", borderBottom: "1px dashed rgba(255,255,255,0.4)" }}>Week of {weekLabel}</span>
+              <span onClick={() => setEditingWeek(true)} style={{ fontSize: 14, opacity: 0.9, cursor: "pointer", borderBottom: "1px dashed rgba(255,255,255,0.4)" }}>Week of {activeWeekLabel}</span>
             )}
           </div>
           <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-            <Pill label={`${totalSessions}`} color="#81C784" />
-            <Pill label={`${confirmedCount} ✓`} color="#C8E6C9" textColor="#1B5E20" />
-            <Pill label={`${pendingCount} ?`} color="#FFE0B2" textColor="#E65100" />
-            {blockedCount > 0 && <Pill label={`${blockedCount} 🚫`} color="#E1BEE7" textColor="#4A148C" />}
+            {!isNext && !nextSchedule && (
+              <button onClick={startNextWeek} style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: 8, color: "white", padding: "6px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer" }}>+ Start Next Week</button>
+            )}
+            {!isNext && nextSchedule && (
+              <button onClick={closeCurrentWeek} style={{ background: "rgba(239,83,80,0.2)", border: "1px solid rgba(239,83,80,0.4)", borderRadius: 8, color: "#FFCDD2", padding: "6px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer" }}>Close Out Week</button>
+            )}
           </div>
         </div>
-        <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-          <button onClick={newWeek} style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 6, color: "white", padding: "4px 12px", fontSize: 11, cursor: "pointer" }}>+ New Week</button>
+
+        {/* WEEK TOGGLE TABS */}
+        {nextSchedule && (
+          <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
+            <button onClick={() => setViewingWeek("current")} style={{
+              flex: 1, padding: "8px 0", borderRadius: 8, border: viewingWeek === "current" ? "2px solid white" : "1px solid rgba(255,255,255,0.2)",
+              background: viewingWeek === "current" ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.05)",
+              color: "white", fontSize: 12, fontWeight: viewingWeek === "current" ? 700 : 400, cursor: "pointer",
+            }}>📅 This Week · {weekLabel}</button>
+            <button onClick={() => setViewingWeek("next")} style={{
+              flex: 1, padding: "8px 0", borderRadius: 8, border: viewingWeek === "next" ? "2px solid white" : "1px solid rgba(255,255,255,0.2)",
+              background: viewingWeek === "next" ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.05)",
+              color: "white", fontSize: 12, fontWeight: viewingWeek === "next" ? 700 : 400, cursor: "pointer",
+            }}>📋 Next Week · {nextWeekLabel}</button>
+          </div>
+        )}
+
+        {/* STATS */}
+        <div style={{ display: "flex", gap: 12, marginTop: 10, fontSize: 11 }}>
+          <span style={{ opacity: 0.7 }}>{totalSessions} sessions</span>
+          <span style={{ color: "#81C784" }}>✓{confirmedCount}</span>
+          <span style={{ color: "#FFB74D" }}>?{pendingCount}</span>
         </div>
       </div>
 
+      {/* GRID */}
       <div style={{ padding: "12px 8px", overflowX: "auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "54px repeat(5, 1fr)", gap: 2 }}>
           <div />
           {DAYS.map((day, i) => (
-            <div key={day} style={{ background: "#1B2A4A", color: "white", textAlign: "center", padding: "5px 2px", borderRadius: 4, fontSize: 11, fontWeight: 700 }}>
+            <div key={day} style={{ background: isNext ? "#1a3a1a" : "#1B2A4A", color: "white", textAlign: "center", padding: "5px 2px", borderRadius: 4, fontSize: 11, fontWeight: 700 }}>
               {day.slice(0, 3)}<div style={{ fontSize: 8, opacity: 0.7, fontWeight: 400 }}>{day === "Friday" ? "→ 3:30" : "→ 7 PM"}</div>
             </div>
           ))}
           {ALL_TIMES.map(time => {
-            // Check if any day in this row has a 25-min client — if so we need a gap sub-row
             const has25 = DAYS.some(day => {
-              const entry = schedule[`${day}-${time}`];
+              const entry = activeSchedule[`${day}-${time}`];
               if (!entry || entry.status === "blocked" || entry.status === "softblocked") return false;
               const ci = clients.find(c => c.name === entry.client);
               return ci?.duration === 25;
             });
-            // Also check if any day has an entry in the gap slot
-            const hasGapEntry = DAYS.some(day => schedule[`${day}-${time}-gap`]);
+            const hasGapEntry = DAYS.some(day => activeSchedule[`${day}-${time}-gap`]);
 
             return (
               <>
-                {/* Main row */}
                 <div key={`t-${time}`} style={{ fontSize: 9, fontWeight: 600, color: "#555", display: "flex", alignItems: "center", justifyContent: "center", minHeight: has25 ? 32 : 42 }}>{time}</div>
                 {DAYS.map(day => {
-                  const key = `${day}-${time}`; const isAvail = DAY_SLOTS[day].includes(time); const entry = schedule[key];
+                  const key = `${day}-${time}`; const isAvail = DAY_SLOTS[day].includes(time); const entry = activeSchedule[key];
                   if (!isAvail) return <div key={key} style={{ background: "#ECEFF1", borderRadius: 4, minHeight: has25 ? 32 : 42, opacity: 0.4 }} />;
                   if (entry && entry.status === "blocked") {
                     return (
@@ -485,70 +608,47 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
                     </div>);
                 })}
 
-                {/* Gap sub-row: only show if any day in this row has a 25-min client or a gap entry */}
+                {/* Gap sub-row */}
                 {(has25 || hasGapEntry) && (
                   <>
                     <div key={`g-${time}`} style={{ fontSize: 7, fontWeight: 600, color: "#AAA", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 24, fontStyle: "italic" }}>
-                      {/* Show the gap time based on the first 25-min entry found in this row */}
-                      {(() => {
-                        for (const d of DAYS) {
-                          const e = schedule[`${d}-${time}`];
-                          if (e && e.status !== "blocked" && e.status !== "softblocked") {
-                            const c = clients.find(cl => cl.name === e.client);
-                            if (c?.duration === 25) return calcGapTime(e.customTime || time);
-                          }
-                        }
-                        return "gap";
-                      })()}
+                      {(() => { for (const d of DAYS) { const e = activeSchedule[`${d}-${time}`]; if (e && e.status !== "blocked" && e.status !== "softblocked") { const c = clients.find(cl => cl.name === e.client); if (c?.duration === 25) return calcGapTime(e.customTime || time); } } return "gap"; })()}
                     </div>
                     {DAYS.map(day => {
-                      const mainKey = `${day}-${time}`;
-                      const gapKey = `${day}-${time}-gap`;
+                      const mainKey = `${day}-${time}`; const gapKey = `${day}-${time}-gap`;
                       const isAvail = DAY_SLOTS[day].includes(time);
-                      const mainEntry = schedule[mainKey];
-                      const gapEntry = schedule[gapKey];
+                      const mainEntry = activeSchedule[mainKey]; const gapEntry = activeSchedule[gapKey];
                       const mainClient = mainEntry ? clients.find(c => c.name === mainEntry.client) : null;
                       const mainIs25 = mainClient?.duration === 25;
                       const gapStartTime = mainIs25 ? calcGapTime(mainEntry?.customTime || time) : "";
-
                       if (!isAvail) return <div key={gapKey} style={{ background: "#ECEFF1", borderRadius: 3, minHeight: 24, opacity: 0.3 }} />;
-
-                      // If main slot is a 25-min session, show the gap as bookable
                       if (mainIs25 && !gapEntry) {
                         return (
-                          <div key={gapKey}
-                            onDragOver={e => e.preventDefault()} onDrop={() => { handleDrop(gapKey, dragItem); setDragItem(null); }}
+                          <div key={gapKey} onDragOver={e => e.preventDefault()} onDrop={() => { handleDrop(gapKey, dragItem); setDragItem(null); }}
                             onClick={() => { setSelectedSlot(gapKey); setSearch(""); setSelectedOpenSlots([]); setRescheduleNote(""); setCustomBlockLabel(""); setPanelMode("empty-actions"); }}
-                            style={{ background: "#F0FFF0", border: "1px dashed #A5D6A7", borderRadius: 4, minHeight: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "background 0.15s" }}
-                            onMouseEnter={e => { e.currentTarget.style.background = "#C8E6C9"; }}
-                            onMouseLeave={e => { e.currentTarget.style.background = "#F0FFF0"; }}>
+                            style={{ background: "#F0FFF0", border: "1px dashed #A5D6A7", borderRadius: 4, minHeight: 24, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
                             <span style={{ fontSize: 7, color: "#66BB6A", fontWeight: 600 }}>OFF {gapStartTime}</span>
                             <span style={{ fontSize: 6, color: "#81C784" }}>tap to book</span>
                           </div>);
                       }
-
-                      // If there's a gap entry (someone booked in the gap)
                       if (gapEntry) {
                         if (gapEntry.status === "blocked" || gapEntry.status === "softblocked") {
                           return (
                             <div key={gapKey} draggable onDragStart={() => setDragItem(gapKey)} onDragOver={e => e.preventDefault()} onDrop={() => { handleDrop(gapKey, dragItem); setDragItem(null); }}
-                              onClick={() => { setSelectedSlot(gapKey); setSearch(""); setSelectedOpenSlots([]); setRescheduleNote(""); setCustomBlockLabel(""); setPanelMode("block-actions"); }}
+                              onClick={() => { setSelectedSlot(gapKey); setPanelMode("block-actions"); }}
                               style={{ background: gapEntry.status === "blocked" ? "#E1BEE7" : "#D1C4E9", border: `1px solid ${gapEntry.status === "blocked" ? "#AB47BC" : "#9575CD"}`, borderRadius: 4, minHeight: 24, display: "flex", flexDirection: "column", justifyContent: "center", padding: "1px 3px", cursor: "grab" }}>
                               <div style={{ fontSize: 7, fontWeight: 700, color: "#4A148C" }}>{gapEntry.client}</div>
                             </div>);
                         }
                         const gs = STATUS_COLORS[gapEntry.status] || STATUS_COLORS.pending;
-                        const gci = clients.find(c => c.name === gapEntry.client);
                         return (
                           <div key={gapKey} draggable onDragStart={() => setDragItem(gapKey)} onDragOver={e => e.preventDefault()} onDrop={() => { handleDrop(gapKey, dragItem); setDragItem(null); }}
-                            onClick={() => { setSelectedSlot(gapKey); setSearch(""); setSelectedOpenSlots([]); setRescheduleNote(""); setCustomBlockLabel(""); setPanelMode("actions"); }}
+                            onClick={() => { setSelectedSlot(gapKey); setPanelMode("actions"); }}
                             style={{ background: gs.bg, border: `1px solid ${gs.border}`, borderRadius: 4, minHeight: 24, display: "flex", flexDirection: "column", justifyContent: "center", padding: "1px 3px", cursor: "grab" }}>
-                            <div style={{ fontSize: 7, fontWeight: 700, color: gs.text, opacity: 0.6 }}>{gapEntry.customTime || "gap"}{gci?.duration === 25 ? " · 25m" : ""}</div>
+                            <div style={{ fontSize: 7, fontWeight: 700, color: gs.text, opacity: 0.6 }}>{gapEntry.customTime || "gap"}</div>
                             <div style={{ fontSize: 8, fontWeight: 600, color: gs.text }}>{gapEntry.client}</div>
                           </div>);
                       }
-
-                      // No 25-min session in this column, just show empty/collapsed gap
                       return <div key={gapKey} onDragOver={e => e.preventDefault()} onDrop={() => { handleDrop(gapKey, dragItem); setDragItem(null); }} style={{ background: "#F9F9F6", borderRadius: 3, minHeight: 24, opacity: 0.3 }} />;
                     })}
                   </>
@@ -558,89 +658,76 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
           })}
         </div>
 
+        {/* Unscheduled */}
         {unscheduled.length > 0 && (
           <div style={{ marginTop: 14, background: "white", borderRadius: 8, padding: 10, border: "1px solid #E0E0E0" }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "#1565C0", marginBottom: 6 }}>Unscheduled ({unscheduled.length})</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "#1565C0", marginBottom: 6 }}>Unscheduled ({unscheduled.length}) — drag to a slot</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-              {unscheduled.map(c => (
-                <span key={c.name} style={{ background: c.type === "fixed" ? "#E8F5E9" : "#FFF8E1", border: `1px solid ${c.type === "fixed" ? "#A5D6A7" : "#FFE082"}`, borderRadius: 10, padding: "2px 8px", fontSize: 10, fontWeight: 500 }}>
-                  {c.name}</span>
-              ))}
+              {unscheduled.map(c => {
+                const bal = c.used || 0; const pur = c.purchased || 30; const remaining = pur - bal;
+                const balColor = remaining <= 0 ? "#C62828" : remaining <= 3 ? "#E65100" : "#555";
+                return (
+                  <span key={c.name} draggable onDragStart={() => setDragClient(c.name)} onDragEnd={() => setDragClient(null)}
+                    style={{ background: c.type === "fixed" ? "#E8F5E9" : "#FFF8E1", border: `1px solid ${c.type === "fixed" ? "#A5D6A7" : "#FFE082"}`, borderRadius: 10, padding: "4px 10px", fontSize: 10, fontWeight: 500, cursor: "grab", display: "inline-flex", alignItems: "center", gap: 4, userSelect: "none" }}>
+                    {c.name}
+                    <span style={{ fontSize: 8, fontWeight: 800, color: balColor, background: "rgba(0,0,0,0.06)", borderRadius: 3, padding: "0 3px" }}>{bal}/{pur}</span>
+                    {c.duration === 25 && <span style={{ fontSize: 7, background: "#F3E5F5", color: "#7B1FA2", padding: "0 3px", borderRadius: 3, fontWeight: 700 }}>25m</span>}
+                  </span>);
+              })}
             </div>
           </div>
         )}
       </div>
 
-      {/* Panels */}
-      {panelMode === "actions" && selectedSlot && schedule[selectedSlot] && (
+      {/* ===== ACTION PANELS ===== */}
+      {panelMode === "actions" && selectedSlot && activeSchedule[selectedSlot] && (
         <Overlay onClose={closePanel}>
-          <PanelHeader slot={selectedSlot} subtitle={schedule[selectedSlot].client} />
-          {schedule[selectedSlot].customTime && (
+          <PanelHeader slot={selectedSlot} subtitle={activeSchedule[selectedSlot].client} />
+          {activeSchedule[selectedSlot].customTime && (
             <div style={{ textAlign: "center", marginBottom: 10 }}>
-              <span style={{ background: "#E3F2FD", color: "#1565C0", padding: "3px 10px", borderRadius: 8, fontSize: 11, fontWeight: 600 }}>Actual start: {schedule[selectedSlot].customTime}</span>
+              <span style={{ background: "#E3F2FD", color: "#1565C0", padding: "3px 10px", borderRadius: 8, fontSize: 11, fontWeight: 600 }}>Actual start: {activeSchedule[selectedSlot].customTime}</span>
             </div>
           )}
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <ActionButton icon="⏱" label="Edit Start Time" desc={schedule[selectedSlot].customTime ? `Currently ${schedule[selectedSlot].customTime}` : "Set actual start time"} color="#E8EAF6" borderColor="#9FA8DA"
-              onClick={() => { setEditTimeValue(schedule[selectedSlot].customTime || ""); setPanelMode("edit-time"); }} />
+            <ActionButton icon="⏱" label="Edit Start Time" desc={activeSchedule[selectedSlot].customTime ? `Currently ${activeSchedule[selectedSlot].customTime}` : "Set actual start time"} color="#E8EAF6" borderColor="#9FA8DA"
+              onClick={() => { setEditTimeValue(activeSchedule[selectedSlot].customTime || ""); setPanelMode("edit-time"); }} />
             <ActionButton icon="🔄" label="Reschedule" desc="Pick open slots & text options" color="#E3F2FD" borderColor="#90CAF9"
               onClick={() => { setPanelMode("reschedule"); setSelectedOpenSlots([]); setRescheduleNote(""); }} />
             <ActionButton icon="↔" label="Move Slot" desc="Reassign without texting" color="#FFF8E1" borderColor="#FFE082"
               onClick={() => setPanelMode("assign")} />
             <ActionButton icon="✕" label="Cancel" desc="Mark as cancelled" color="#FFEBEE" borderColor="#EF9A9A"
-              onClick={() => { setSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], status: "cancelled" } })); closePanel(); }} />
+              onClick={() => { setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], status: "cancelled" } })); closePanel(); }} />
             <ActionButton icon="🗑" label="Clear" desc="Remove from schedule" color="#F5F5F5" borderColor="#E0E0E0"
               onClick={() => { clearSlot(selectedSlot); closePanel(); }} />
           </div>
         </Overlay>
       )}
 
-      {/* EDIT START TIME */}
-      {panelMode === "edit-time" && selectedSlot && schedule[selectedSlot] && (
+      {panelMode === "edit-time" && selectedSlot && activeSchedule[selectedSlot] && (
         <Overlay onClose={closePanel}>
-          <PanelHeader slot={selectedSlot} subtitle={`${schedule[selectedSlot].client} — Edit Start Time`} />
+          <PanelHeader slot={selectedSlot} subtitle={`${activeSchedule[selectedSlot].client} — Edit Start Time`} />
           <div style={{ fontSize: 12, color: "#666", marginBottom: 10, textAlign: "center" }}>
-            Slot is in the {selectedSlot.split("-")[1]} row. Set the actual start time:
+            Slot is in the {selectedSlot.split("-").slice(1).join("-")} row. Set the actual start time:
           </div>
-          <input
-            autoFocus
-            value={editTimeValue}
-            onChange={e => setEditTimeValue(e.target.value)}
-            placeholder="e.g. 6:25 AM, 9:05 AM, 1:15 PM"
-            onKeyDown={e => {
-              if (e.key === "Enter") {
-                setSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], customTime: editTimeValue.trim() || undefined } }));
-                closePanel();
-              }
-            }}
-            style={{ width: "100%", padding: "12px 14px", borderRadius: 10, border: "2px solid #9FA8DA", fontSize: 16, textAlign: "center", boxSizing: "border-box", fontWeight: 600 }}
-          />
+          <input autoFocus value={editTimeValue} onChange={e => setEditTimeValue(e.target.value)}
+            placeholder="e.g. 6:25 AM, 9:05 AM" onKeyDown={e => { if (e.key === "Enter") { setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], customTime: editTimeValue.trim() || undefined } })); closePanel(); } }}
+            style={{ width: "100%", padding: "12px 14px", borderRadius: 10, border: "2px solid #9FA8DA", fontSize: 16, textAlign: "center", boxSizing: "border-box", fontWeight: 600 }} />
           <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-            <button onClick={() => {
-              setSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], customTime: editTimeValue.trim() || undefined } }));
-              closePanel();
-            }} style={{
-              flex: 1, padding: "12px", borderRadius: 10, border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer",
-              background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white",
-            }}>Save</button>
-            {schedule[selectedSlot].customTime && (
-              <button onClick={() => {
-                setSchedule(prev => { const n = { ...prev }; const e = { ...n[selectedSlot] }; delete e.customTime; n[selectedSlot] = e; return n; });
-                closePanel();
-              }} style={{
-                padding: "12px 16px", borderRadius: 10, border: "1px solid #EF9A9A", background: "#FFEBEE", color: "#C62828", fontSize: 13, fontWeight: 600, cursor: "pointer",
-              }}>Reset to {selectedSlot.split("-")[1]}</button>
+            <button onClick={() => { setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { ...prev[selectedSlot], customTime: editTimeValue.trim() || undefined } })); closePanel(); }}
+              style={{ flex: 1, padding: "12px", borderRadius: 10, border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer", background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white" }}>Save</button>
+            {activeSchedule[selectedSlot].customTime && (
+              <button onClick={() => { setActiveSchedule(prev => { const n = { ...prev }; const e = { ...n[selectedSlot] }; delete e.customTime; n[selectedSlot] = e; return n; }); closePanel(); }}
+                style={{ padding: "12px 16px", borderRadius: 10, border: "1px solid #EF9A9A", background: "#FFEBEE", color: "#C62828", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Reset</button>
             )}
           </div>
         </Overlay>
       )}
 
-      {panelMode === "reschedule" && selectedSlot && schedule[selectedSlot] && (
+      {panelMode === "reschedule" && selectedSlot && activeSchedule[selectedSlot] && (
         <Overlay onClose={closePanel}>
-          <PanelHeader slot={selectedSlot} subtitle={`Reschedule ${schedule[selectedSlot].client}`} />
+          <PanelHeader slot={selectedSlot} subtitle={`Reschedule ${activeSchedule[selectedSlot].client}`} />
           <div style={{ fontSize: 12, color: "#666", marginBottom: 10, textAlign: "center" }}>Tap 2-3 slots to offer as alternatives</div>
           <div style={{ maxHeight: "45vh", overflow: "auto", marginBottom: 12 }}>
-            {/* PRIMARY: Open slots */}
             <div style={{ fontSize: 11, fontWeight: 700, color: "#1B5E20", marginBottom: 6, padding: "4px 8px", background: "#E8F5E9", borderRadius: 6 }}>Open Training Times</div>
             {DAYS.map(day => {
               const dayOpen = openSlots.filter(s => s.day === day);
@@ -660,11 +747,9 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
                   </div>
                 </div>);
             })}
-
-            {/* SECONDARY: Soft-blocked (programming) slots */}
             {softBlockedSlots.length > 0 && (
               <>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "#5E35B1", marginBottom: 6, marginTop: 12, padding: "4px 8px", background: "#EDE7F6", borderRadius: 6 }}>Can Book Over (Programming Time)</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#5E35B1", marginBottom: 6, marginTop: 8, padding: "4px 8px", background: "#EDE7F6", borderRadius: 6 }}>Secondary (Soft-Blocked)</div>
                 {DAYS.map(day => {
                   const daySoft = softBlockedSlots.filter(s => s.day === day);
                   if (!daySoft.length) return null;
@@ -676,8 +761,8 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
                           const isSel = selectedOpenSlots.find(s => s.key === slot.key);
                           return <button key={slot.key} onClick={() => toggleOpenSlot(slot)} style={{
                             padding: "6px 10px", borderRadius: 8, fontSize: 12, fontWeight: 600, cursor: "pointer",
-                            background: isSel ? "#5E35B1" : "#EDE7F6", color: isSel ? "white" : "#5E35B1",
-                            border: `1.5px solid ${isSel ? "#5E35B1" : "#B39DDB"}`,
+                            background: isSel ? "#5E35B1" : "#F3E5F5", color: isSel ? "white" : "#7B1FA2",
+                            border: `1.5px solid ${isSel ? "#5E35B1" : "#CE93D8"}`,
                           }}>{slot.time} {isSel && "✓"}</button>;
                         })}
                       </div>
@@ -687,42 +772,37 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
             )}
           </div>
           {selectedOpenSlots.length > 0 && (
-            <button onClick={() => setPanelMode("reschedule-text")} style={{ width: "100%", padding: "12px", borderRadius: 10, border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer", background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white" }}>
-              Preview Text →</button>
-          )}
-          {selectedOpenSlots.length === 1 && (
-            <button onClick={() => handleConfirmReschedule(selectedOpenSlots[0].key)} style={{ width: "100%", padding: 10, marginTop: 8, borderRadius: 8, border: "1px solid #C8E6C9", background: "#E8F5E9", color: "#1B5E20", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
-              Move to {selectedOpenSlots[0].label} (no text)</button>
+            <button onClick={() => setPanelMode("reschedule-text")} style={{
+              width: "100%", padding: "12px", borderRadius: 10, border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer",
+              background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white",
+            }}>Preview Text ({selectedOpenSlots.length} option{selectedOpenSlots.length > 1 ? "s" : ""})</button>
           )}
         </Overlay>
       )}
 
-      {panelMode === "reschedule-text" && selectedSlot && schedule[selectedSlot] && (
+      {panelMode === "reschedule-text" && selectedSlot && activeSchedule[selectedSlot] && (
         <Overlay onClose={closePanel}>
-          <PanelHeader slot={selectedSlot} subtitle={`Text ${schedule[selectedSlot].client}`} />
-          <div style={{ marginBottom: 10 }}>
-            <label style={{ fontSize: 11, fontWeight: 600, color: "#888" }}>Personal note</label>
-            <textarea value={rescheduleNote} onChange={e => setRescheduleNote(e.target.value)} placeholder="E.g. No worries at all!"
-              style={{ width: "100%", marginTop: 4, padding: 10, borderRadius: 8, border: "1px solid #E0E0E0", fontSize: 13, fontFamily: "inherit", resize: "vertical", minHeight: 44, boxSizing: "border-box", background: "#FAFAF8" }} />
+          <PanelHeader slot={selectedSlot} subtitle={`Text ${activeSchedule[selectedSlot].client}`} />
+          <textarea value={rescheduleNote} onChange={e => setRescheduleNote(e.target.value)} placeholder="Add a personal note (optional)"
+            style={{ width: "100%", padding: 10, borderRadius: 8, border: "1px solid #E0E0E0", fontSize: 13, fontFamily: "inherit", resize: "vertical", minHeight: 36, boxSizing: "border-box", marginBottom: 10, background: "#FAFAF8" }} />
+          <div style={{ padding: 12, borderRadius: 14, background: "#E8F5E9", fontSize: 13, lineHeight: 1.5, borderBottomLeftRadius: 4, marginBottom: 12 }}>{buildRescheduleText()}</div>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button onClick={handleSendReschedule} style={{ flex: 1, padding: "12px", borderRadius: 10, border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer", background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white" }}>Send & Cancel Slot</button>
+            {selectedOpenSlots.length === 1 && (
+              <button onClick={() => handleConfirmReschedule(selectedOpenSlots[0].key)} style={{ padding: "12px 14px", borderRadius: 10, border: "1px solid #A5D6A7", background: "#E8F5E9", color: "#1B5E20", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Just Move</button>
+            )}
           </div>
-          <div style={{ marginBottom: 12 }}>
-            <label style={{ fontSize: 11, fontWeight: 600, color: "#888" }}>Preview</label>
-            <div style={{ marginTop: 4, padding: 12, borderRadius: 14, background: "#E8F5E9", fontSize: 14, lineHeight: 1.6, borderBottomLeftRadius: 4 }}>{buildRescheduleText()}</div>
-          </div>
-          <button onClick={handleSendReschedule} style={{ width: "100%", padding: "13px", borderRadius: 10, border: "none", fontSize: 15, fontWeight: 700, cursor: "pointer", background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white" }}>
-            Open in Messages →</button>
-          <button onClick={() => setPanelMode("reschedule")} style={{ width: "100%", padding: 8, marginTop: 8, borderRadius: 8, border: "1px solid #DDD", background: "#F5F5F5", color: "#666", fontSize: 12, cursor: "pointer" }}>← Back</button>
         </Overlay>
       )}
 
       {panelMode === "assign" && selectedSlot && (
         <Overlay onClose={closePanel}>
-          <PanelHeader slot={selectedSlot} subtitle={schedule[selectedSlot]?.client ? `Replace ${schedule[selectedSlot].client}` : "Assign client"} />
+          <PanelHeader slot={selectedSlot} subtitle={activeSchedule[selectedSlot]?.client ? `Replace ${activeSchedule[selectedSlot].client}` : "Assign Client"} />
           <input autoFocus placeholder="Search clients..." value={search} onChange={e => setSearch(e.target.value)}
-            style={{ width: "100%", padding: "8px 12px", borderRadius: 8, border: "1px solid #DDD", fontSize: 14, marginBottom: 8, boxSizing: "border-box" }} />
-          <div style={{ display: "flex", flexDirection: "column", gap: 4, maxHeight: "50vh", overflow: "auto" }}>
+            style={{ width: "100%", padding: "8px 12px", borderRadius: 10, border: "1px solid #E0DED8", fontSize: 14, background: "white", boxSizing: "border-box", marginBottom: 8 }} />
+          <div style={{ maxHeight: "50vh", overflow: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
             {filteredClients.map(c => {
-              const count = sessionCounts[c.name] || 0;
+              const count = Object.values(activeSchedule).filter(s => s.client === c.name && s.status !== "blocked").length;
               return (
                 <button key={c.name} onClick={() => assignClient(c.name)} style={{
                   display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderRadius: 6, border: "1px solid #EEE",
@@ -736,99 +816,76 @@ function ScheduleView({ schedule, setSchedule, clients, setClients, weekLabel, s
         </Overlay>
       )}
 
-      {/* EMPTY SLOT ACTIONS — assign client or block time */}
       {panelMode === "empty-actions" && selectedSlot && (
         <Overlay onClose={closePanel}>
           <PanelHeader slot={selectedSlot} subtitle="What do you need here?" />
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <ActionButton icon="👤" label="Assign Client" desc="Schedule a training session" color="#E3F2FD" borderColor="#90CAF9"
-              onClick={() => setPanelMode("assign")} />
-            <ActionButton icon="🚫" label="Block Time" desc="Personal time — can't be scheduled over" color="#F3E5F5" borderColor="#CE93D8"
-              onClick={() => setPanelMode("block-select")} />
+            <ActionButton icon="👤" label="Assign Client" desc="Schedule a training session" color="#E3F2FD" borderColor="#90CAF9" onClick={() => setPanelMode("assign")} />
+            <ActionButton icon="🚫" label="Block Time" desc="Personal time — can't be scheduled over" color="#F3E5F5" borderColor="#CE93D8" onClick={() => setPanelMode("block-select")} />
           </div>
         </Overlay>
       )}
 
-      {/* BLOCK TIME SELECTION — pick preset or custom */}
       {panelMode === "block-select" && selectedSlot && (
         <Overlay onClose={closePanel}>
           <PanelHeader slot={selectedSlot} subtitle="Block this time for..." />
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {BLOCK_PRESETS.map(preset => (
-              <button key={preset.label} onClick={() => {
-                const status = preset.bookable ? "softblocked" : "blocked";
-                setSchedule(prev => ({ ...prev, [selectedSlot]: { client: `${preset.icon} ${preset.label}`, status } }));
-                closePanel();
-              }} style={{
-                display: "flex", alignItems: "center", gap: 10, padding: "11px 14px", borderRadius: 10,
-                background: preset.bookable ? "#EDE7F6" : "#F3E5F5",
-                border: `1.5px solid ${preset.bookable ? "#B39DDB" : "#CE93D8"}`,
-                cursor: "pointer", textAlign: "left", width: "100%",
-              }}>
+              <button key={preset.label} onClick={() => { setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { client: preset.label, status: preset.soft ? "softblocked" : "blocked" } })); closePanel(); }}
+                style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 12px", borderRadius: 8, border: `1.5px solid ${preset.soft ? "#9575CD" : "#AB47BC"}`, background: preset.soft ? "#EDE7F6" : "#F3E5F5", cursor: "pointer", textAlign: "left" }}>
                 <span style={{ fontSize: 18 }}>{preset.icon}</span>
-                <div>
-                  <span style={{ fontWeight: 600, fontSize: 14, color: "#4A148C" }}>{preset.label}</span>
-                  {preset.bookable && <div style={{ fontSize: 10, color: "#7E57C2", marginTop: 1 }}>Can be booked over if needed</div>}
-                </div>
+                <div><div style={{ fontWeight: 600, fontSize: 13, color: "#4A148C" }}>{preset.label}</div><div style={{ fontSize: 10, color: "#7B1FA2" }}>{preset.soft ? "Soft block — can train if needed" : "Hard block — no training"}</div></div>
               </button>
             ))}
-            {/* Custom block */}
             <div style={{ marginTop: 4 }}>
-              <div style={{ fontSize: 11, fontWeight: 600, color: "#888", marginBottom: 4 }}>OR CUSTOM</div>
-              <div style={{ display: "flex", gap: 6 }}>
-                <input value={customBlockLabel} onChange={e => setCustomBlockLabel(e.target.value)}
-                  placeholder="E.g. Doctor appt, Errands..."
-                  onKeyDown={e => { if (e.key === "Enter" && customBlockLabel.trim()) { setSchedule(prev => ({ ...prev, [selectedSlot]: { client: customBlockLabel.trim(), status: "blocked" } })); closePanel(); }}}
-                  style={{ flex: 1, padding: "8px 12px", borderRadius: 8, border: "1px solid #CE93D8", fontSize: 13, boxSizing: "border-box" }} />
-                <button onClick={() => {
-                  if (customBlockLabel.trim()) {
-                    setSchedule(prev => ({ ...prev, [selectedSlot]: { client: customBlockLabel.trim(), status: "blocked" } }));
-                    closePanel();
-                  }
-                }} style={{
-                  padding: "8px 16px", borderRadius: 8, border: "none", background: customBlockLabel.trim() ? "#AB47BC" : "#E0E0E0",
-                  color: customBlockLabel.trim() ? "white" : "#999", fontWeight: 700, fontSize: 13, cursor: customBlockLabel.trim() ? "pointer" : "default",
-                }}>Block</button>
-              </div>
+              <input placeholder="Custom label..." value={customBlockLabel} onChange={e => setCustomBlockLabel(e.target.value)}
+                onKeyDown={e => { if (e.key === "Enter" && customBlockLabel.trim()) { setActiveSchedule(prev => ({ ...prev, [selectedSlot]: { client: customBlockLabel.trim(), status: "blocked" } })); closePanel(); } }}
+                style={{ width: "100%", padding: "8px 12px", borderRadius: 8, border: "1px solid #CE93D8", fontSize: 13, boxSizing: "border-box" }} />
             </div>
           </div>
         </Overlay>
       )}
 
-      {/* BLOCKED SLOT ACTIONS — edit or clear */}
-      {panelMode === "block-actions" && selectedSlot && schedule[selectedSlot] && (
+      {panelMode === "block-actions" && selectedSlot && activeSchedule[selectedSlot] && (
         <Overlay onClose={closePanel}>
-          <PanelHeader slot={selectedSlot} subtitle={schedule[selectedSlot].client} />
-          <div style={{ textAlign: "center", padding: "8px 0 16px" }}>
-            <span style={{
-              background: schedule[selectedSlot].status === "softblocked" ? "#D1C4E9" : "#E1BEE7",
-              color: "#4A148C", padding: "4px 14px", borderRadius: 12, fontSize: 13, fontWeight: 700
-            }}>
-              {schedule[selectedSlot].status === "softblocked" ? "Soft Block — Can Train Here If Needed" : "Blocked — Personal Time"}
+          <PanelHeader slot={selectedSlot} subtitle={activeSchedule[selectedSlot].client} />
+          <div style={{ textAlign: "center", marginBottom: 10 }}>
+            <span style={{ background: activeSchedule[selectedSlot].status === "softblocked" ? "#EDE7F6" : "#F3E5F5", color: activeSchedule[selectedSlot].status === "softblocked" ? "#5E35B1" : "#7B1FA2", padding: "4px 12px", borderRadius: 8, fontSize: 11, fontWeight: 600 }}>
+              {activeSchedule[selectedSlot].status === "softblocked" ? "Soft Block — Can Train Here If Needed" : "Blocked — Personal Time"}
             </span>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <ActionButton icon="✏️" label="Change Block" desc="Pick a different label" color="#F3E5F5" borderColor="#CE93D8"
-              onClick={() => setPanelMode("block-select")} />
-            <ActionButton icon="👤" label="Replace with Client" desc="Open this slot for a session" color="#E3F2FD" borderColor="#90CAF9"
-              onClick={() => { clearSlot(selectedSlot); setPanelMode("assign"); }} />
-            <ActionButton icon="🗑" label="Clear Block" desc="Open this slot up" color="#F5F5F5" borderColor="#E0E0E0"
-              onClick={() => { clearSlot(selectedSlot); closePanel(); }} />
+            <ActionButton icon="✏️" label="Change Block" desc="Pick a different label" color="#F3E5F5" borderColor="#CE93D8" onClick={() => setPanelMode("block-select")} />
+            <ActionButton icon="👤" label="Replace with Client" desc="Open this slot for a session" color="#E3F2FD" borderColor="#90CAF9" onClick={() => { clearSlot(selectedSlot); setPanelMode("assign"); }} />
+            <ActionButton icon="🗑" label="Clear Block" desc="Open this slot up" color="#F5F5F5" borderColor="#E0E0E0" onClick={() => { clearSlot(selectedSlot); closePanel(); }} />
           </div>
         </Overlay>
+      )}
+
+      {invoiceClient && (
+        <InvoicePanel clientName={invoiceClient} client={clients.find(c => c.name === invoiceClient)} onClose={() => setInvoiceClient(null)} />
       )}
     </>
   );
 }
 
 // ===================== SUNDAY SEND VIEW =====================
-function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, weekLabel }) {
+function SundaySendView({ schedule, weekLabel, notes, setNotes, sent, setSent, nextSchedule, nextWeekLabel, nextNotes, setNextNotes, nextSent, setNextSent, clients }) {
+  const [sendWeek, setSendWeek] = useState("current");
+  const isNextWeek = sendWeek === "next" && nextSchedule;
+  const activeSchedule = isNextWeek ? nextSchedule : schedule;
+  const activeWeekLabel = isNextWeek ? nextWeekLabel : weekLabel;
+  const activeNotes = isNextWeek ? (nextNotes || {}) : notes;
+  const setActiveNotes = isNextWeek ? setNextNotes : setNotes;
+  const activeSent = isNextWeek ? nextSent : sent;
+  const setActiveSent = isNextWeek ? setNextSent : setSent;
+
   const [search, setSearch] = useState("");
   const [expandedClient, setExpandedClient] = useState(null);
-  const [filter, setFilter] = useState("unsent");
+  const [filter, setFilter] = useState("all");
 
   const clientSessions = {};
-  Object.entries(schedule).forEach(([key, val]) => {
+  Object.entries(activeSchedule).forEach(([key, val]) => {
     if (val.status === "cancelled" || val.status === "blocked" || val.status === "softblocked") return;
     const [day, time] = key.split("-");
     if (!clientSessions[val.client]) clientSessions[val.client] = [];
@@ -838,8 +895,8 @@ function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, wee
   const activeClients = clients.filter(c => clientSessions[c.name]?.length > 0);
   const filtered = activeClients.filter(c => {
     if (search && !c.name.toLowerCase().includes(search.toLowerCase())) return false;
-    if (filter === "sent") return sent.has(c.name);
-    if (filter === "unsent") return !sent.has(c.name);
+    if (filter === "sent") return activeSent.has(c.name);
+    if (filter === "unsent") return !activeSent.has(c.name);
     return true;
   });
 
@@ -847,19 +904,20 @@ function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, wee
     const firstName = client.name.split(" ")[0].split("&")[0].trim();
     const sessions = clientSessions[client.name] || [];
     const noteText = note?.trim() ? ` ${note.trim()}` : "";
-    if (sessions.length === 1) return `Hey ${firstName}!${noteText} You're on for ${sessions[0].day} at ${sessions[0].time} this week. Let me know if anything changes!`;
+    const weekRef = isNextWeek ? "next week" : "this week";
+    if (sessions.length === 1) return `Hey ${firstName}!${noteText} You're on for ${sessions[0].day} at ${sessions[0].time} ${weekRef}. Let me know if anything changes!`;
     const times = sessions.map(s => `${s.day} ${s.time}`).join(", ");
-    return `Hey ${firstName}!${noteText} Here's this week — ${times}. Let me know if anything needs to shift!`;
+    return `Hey ${firstName}!${noteText} Here's ${weekRef} — ${times}. Let me know if anything needs to shift!`;
   };
 
   const handleSend = (client) => {
-    const message = buildMessage(client, notes[client.name]);
+    const message = buildMessage(client, activeNotes[client.name]);
     window.open(`sms:${client.phone}&body=${encodeURIComponent(message)}`, "_blank");
-    setSent(prev => new Set([...prev, client.name]));
+    setActiveSent(prev => new Set([...prev, client.name]));
     setExpandedClient(null);
   };
 
-  const sentCount = sent.size;
+  const sentCount = activeSent.size;
   const totalCount = activeClients.length;
   const pct = totalCount > 0 ? Math.round((sentCount / totalCount) * 100) : 0;
 
@@ -869,7 +927,7 @@ function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, wee
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
           <div>
             <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.5, opacity: 0.5, fontWeight: 600 }}>Sunday Send</div>
-            <h1 style={{ margin: "4px 0 0", fontSize: 20, fontWeight: 700 }}>Week of {weekLabel}</h1>
+            <h1 style={{ margin: "4px 0 0", fontSize: 20, fontWeight: 700 }}>Week of {activeWeekLabel}</h1>
           </div>
           <div style={{ textAlign: "right" }}>
             <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1 }}>{sentCount}/{totalCount}</div>
@@ -879,6 +937,23 @@ function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, wee
         <div style={{ marginTop: 10, background: "rgba(255,255,255,0.1)", borderRadius: 6, height: 5, overflow: "hidden" }}>
           <div style={{ width: `${pct}%`, height: "100%", background: sentCount === totalCount ? "#4CAF50" : "#64B5F6", borderRadius: 6, transition: "width 0.4s" }} />
         </div>
+
+        {/* Week toggle */}
+        {nextSchedule && (
+          <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
+            <button onClick={() => setSendWeek("current")} style={{
+              flex: 1, padding: "6px 0", borderRadius: 8, border: sendWeek === "current" ? "2px solid white" : "1px solid rgba(255,255,255,0.2)",
+              background: sendWeek === "current" ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.05)",
+              color: "white", fontSize: 11, fontWeight: sendWeek === "current" ? 700 : 400, cursor: "pointer",
+            }}>This Week</button>
+            <button onClick={() => setSendWeek("next")} style={{
+              flex: 1, padding: "6px 0", borderRadius: 8, border: sendWeek === "next" ? "2px solid white" : "1px solid rgba(255,255,255,0.2)",
+              background: sendWeek === "next" ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.05)",
+              color: "white", fontSize: 11, fontWeight: sendWeek === "next" ? 700 : 400, cursor: "pointer",
+            }}>Next Week</button>
+          </div>
+        )}
+
         <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
           {["all", "unsent", "sent"].map(f => (
             <button key={f} onClick={() => setFilter(f)} style={{
@@ -895,9 +970,9 @@ function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, wee
           style={{ width: "100%", padding: "8px 12px", borderRadius: 10, border: "1px solid #E0DED8", fontSize: 14, background: "white", boxSizing: "border-box", marginBottom: 6 }} />
 
         {filtered.map(client => {
-          const isSent = sent.has(client.name);
+          const isSent = activeSent.has(client.name);
           const isExp = expandedClient === client.name;
-          const note = notes[client.name] || "";
+          const note = activeNotes[client.name] || "";
           const firstName = client.name.split(" ")[0].split("&")[0].trim();
 
           return (
@@ -915,22 +990,13 @@ function SundaySendView({ schedule, clients, notes, setNotes, sent, setSent, wee
               </div>
               {isExp && (
                 <div style={{ padding: "0 12px 12px", borderTop: "1px solid #F0EEE9" }}>
-                  <div style={{ marginTop: 10 }}>
-                    <label style={{ fontSize: 10, fontWeight: 600, color: "#888" }}>PERSONAL NOTE</label>
-                    <textarea value={note} onChange={e => setNotes(prev => ({ ...prev, [client.name]: e.target.value }))}
-                      placeholder={`Personal touch for ${firstName}...`}
-                      style={{ width: "100%", marginTop: 4, padding: 8, borderRadius: 8, border: "1px solid #E0DED8", fontSize: 13, fontFamily: "inherit", resize: "vertical", minHeight: 40, boxSizing: "border-box", background: "#FAFAF8" }} />
-                  </div>
-                  <div style={{ marginTop: 8 }}>
-                    <label style={{ fontSize: 10, fontWeight: 600, color: "#888" }}>PREVIEW</label>
-                    <div style={{ marginTop: 4, padding: 10, borderRadius: 12, background: "#E8F5E9", fontSize: 13, lineHeight: 1.5, borderBottomLeftRadius: 4 }}>
-                      {buildMessage(client, note)}
-                    </div>
-                  </div>
+                  <textarea value={note} onChange={e => setActiveNotes(prev => ({ ...prev, [client.name]: e.target.value }))}
+                    placeholder="Personal note (optional)..." style={{ width: "100%", marginTop: 8, padding: 8, borderRadius: 8, border: "1px solid #E0DED8", fontSize: 13, fontFamily: "inherit", resize: "vertical", minHeight: 36, boxSizing: "border-box", background: "#FAFAF8" }} />
+                  <div style={{ marginTop: 8, padding: 12, borderRadius: 14, background: "#E8F5E9", fontSize: 13, lineHeight: 1.5, borderBottomLeftRadius: 4 }}>{buildMessage(client, note)}</div>
                   <button onClick={() => handleSend(client)} style={{
-                    width: "100%", marginTop: 8, padding: "10px", borderRadius: 10, border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer",
-                    background: isSent ? "#E8E8E8" : "linear-gradient(135deg, #1a1a2e, #16213e)", color: isSent ? "#888" : "white",
-                  }}>{isSent ? "✓ Resend" : `Send to ${firstName} →`}</button>
+                    width: "100%", marginTop: 8, padding: "10px", borderRadius: 10, border: "none", cursor: "pointer", fontSize: 14, fontWeight: 600,
+                    background: isSent ? "#E8F5E9" : "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: isSent ? "#2E7D32" : "white",
+                  }}>{isSent ? "✓ Sent — Send Again?" : "Open in Messages →"}</button>
                 </div>
               )}
             </div>
@@ -946,6 +1012,7 @@ function ClientsView({ clients, setClients, schedule }) {
   const [search, setSearch] = useState("");
   const [editing, setEditing] = useState(null);
   const [showTopUp, setShowTopUp] = useState(null);
+  const [invoiceClient, setInvoiceClient] = useState(null);
 
   const sessionCounts = {};
   Object.values(schedule).forEach(({ client, status }) => { if (status !== "blocked" && status !== "softblocked") sessionCounts[client] = (sessionCounts[client] || 0) + 1; });
@@ -1086,11 +1153,233 @@ function ClientsView({ clients, setClients, schedule }) {
                   </div>
                 )}
               </div>
+
+              {/* Invoice button */}
+              <button onClick={() => setInvoiceClient(c.name)} style={{
+                width: "100%", marginTop: 6, padding: "7px", borderRadius: 8,
+                border: `1.5px solid ${remaining <= 3 ? "#EF9A9A" : "#90CAF9"}`,
+                background: remaining <= 3 ? "#FFF3E0" : "#F5F9FF",
+                color: remaining <= 3 ? "#E65100" : "#1565C0",
+                fontSize: 11, fontWeight: 600, cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 4,
+              }}>
+                💳 {remaining <= 3 ? `Send Invoice (${remaining} left!)` : "Send Invoice"}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Invoice Panel */}
+      {invoiceClient && (
+        <InvoicePanel
+          clientName={invoiceClient}
+          client={clients.find(c => c.name === invoiceClient)}
+          onClose={() => setInvoiceClient(null)}
+        />
+      )}
+    </>
+  );
+}
+
+// ===================== HISTORY VIEW =====================
+function HistoryView({ weekHistory, setWeekHistory, clients, onLoad }) {
+  const [expandedIdx, setExpandedIdx] = useState(null);
+
+  const deleteWeek = (idx) => {
+    if (confirm("Delete this archived week?")) {
+      setWeekHistory(prev => prev.filter((_, i) => i !== idx));
+      setExpandedIdx(null);
+    }
+  };
+
+  return (
+    <>
+      <div style={{ background: "linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 100%)", padding: "20px 16px 14px", color: "white" }}>
+        <h1 style={{ margin: 0, fontSize: 20, fontWeight: 700 }}>Week History</h1>
+        <div style={{ fontSize: 13, opacity: 0.7, marginTop: 2 }}>{weekHistory.length} week{weekHistory.length !== 1 ? "s" : ""} archived</div>
+      </div>
+      <div style={{ padding: "10px 16px" }}>
+        {weekHistory.length === 0 && (
+          <div style={{ textAlign: "center", padding: 40, color: "#AAA" }}>
+            <div style={{ fontSize: 32, marginBottom: 8 }}>📂</div>
+            <div style={{ fontSize: 14 }}>No weeks archived yet</div>
+            <div style={{ fontSize: 12, marginTop: 4 }}>When you tap "+ New Week" on the schedule, the current week gets saved here automatically.</div>
+          </div>
+        )}
+        {weekHistory.map((entry, idx) => {
+          const isExp = expandedIdx === idx;
+          const schedEntries = Object.entries(entry.schedule).filter(([_, v]) => v.status !== "blocked" && v.status !== "softblocked");
+
+          return (
+            <div key={idx} style={{ background: "white", borderRadius: 12, marginBottom: 8, border: "1px solid #E8E6E1", overflow: "hidden" }}>
+              {/* Header */}
+              <div onClick={() => setExpandedIdx(isExp ? null : idx)}
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 14px", cursor: "pointer" }}>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 15, color: "#1B2A4A" }}>Week of {entry.weekLabel}</div>
+                  <div style={{ fontSize: 11, color: "#888", marginTop: 2 }}>
+                    {entry.confirmedCount}/{entry.sessionCount} confirmed · saved {new Date(entry.savedAt).toLocaleDateString()}
+                  </div>
+                </div>
+                <div style={{ fontSize: 12, color: "#CCC", transform: isExp ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</div>
+              </div>
+
+              {/* Expanded: show schedule summary and actions */}
+              {isExp && (
+                <div style={{ padding: "0 14px 14px", borderTop: "1px solid #F0EEE9" }}>
+                  {/* Day-by-day summary */}
+                  {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(day => {
+                    const dayEntries = schedEntries
+                      .filter(([k]) => k.startsWith(day))
+                      .sort(([a], [b]) => a.localeCompare(b));
+                    if (!dayEntries.length) return null;
+                    return (
+                      <div key={day} style={{ marginTop: 8 }}>
+                        <div style={{ fontSize: 11, fontWeight: 700, color: "#1B2A4A", marginBottom: 3 }}>{day}</div>
+                        {dayEntries.map(([key, val]) => {
+                          const time = val.customTime || key.split("-")[1];
+                          const statusIcon = val.status === "confirmed" ? "✓" : val.status === "cancelled" ? "✗" : "?";
+                          const statusColor = val.status === "confirmed" ? "#1B5E20" : val.status === "cancelled" ? "#B71C1C" : "#E65100";
+                          return (
+                            <div key={key} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "2px 0", fontSize: 12 }}>
+                              <span style={{ color: "#555" }}>{time} — {val.client}</span>
+                              <span style={{ color: statusColor, fontWeight: 700, fontSize: 11 }}>{statusIcon}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+
+                  {/* Actions */}
+                  <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+                    <button onClick={() => onLoad(entry)} style={{
+                      flex: 1, padding: "10px", borderRadius: 8, border: "none", fontSize: 13, fontWeight: 600, cursor: "pointer",
+                      background: "linear-gradient(135deg, #1B2A4A, #2C3E6B)", color: "white",
+                    }}>Load This Week</button>
+                    <button onClick={() => deleteWeek(idx)} style={{
+                      padding: "10px 16px", borderRadius: 8, border: "1px solid #EF9A9A", background: "#FFEBEE", color: "#C62828", fontSize: 13, fontWeight: 600, cursor: "pointer",
+                    }}>Delete</button>
+                  </div>
+                  <div style={{ textAlign: "center", fontSize: 10, color: "#AAA", marginTop: 4 }}>Loading replaces your current schedule</div>
+                </div>
+              )}
             </div>
           );
         })}
       </div>
     </>
+  );
+}
+
+// ===================== INVOICE PANEL =====================
+function InvoicePanel({ clientName, client, onClose }) {
+  const [selectedPkg, setSelectedPkg] = useState(null);
+  const [customNote, setCustomNote] = useState("");
+  const groupType = getGroupType(clientName);
+  const packages = client ? getPackagesForClient(client) : PKG_PERSONAL;
+  const bal = client?.used || 0;
+  const pur = client?.purchased || 30;
+  const remaining = pur - bal;
+
+  // Group packages by category
+  const categories = {};
+  packages.forEach(pkg => {
+    if (!categories[pkg.cat]) categories[pkg.cat] = [];
+    categories[pkg.cat].push(pkg);
+  });
+
+  const getDivisor = (pkg) => pkg.split || (groupType === "couple" ? 2 : groupType === "trio" ? 3 : 1);
+  const getClientPrice = (pkg) => { const d = getDivisor(pkg); return d > 1 ? Math.round(pkg.price / d) : pkg.price; };
+
+  const handleSend = () => {
+    if (!selectedPkg || !client?.phone) return;
+    let msg = buildInvoiceText(clientName, selectedPkg, groupType);
+    if (customNote.trim()) msg = msg.replace("time to re-up!", `time to re-up! ${customNote.trim()}`);
+    window.open(`sms:${client.phone}&body=${encodeURIComponent(msg)}`, "_blank");
+    onClose();
+  };
+
+  return (
+    <Overlay onClose={onClose}>
+      <div style={{ textAlign: "center", marginBottom: 14 }}>
+        <div style={{ width: 40, height: 4, background: "#DDD", borderRadius: 2, margin: "0 auto 10px" }} />
+        <div style={{ fontWeight: 800, fontSize: 16, color: "#1B2A4A" }}>Invoice for {clientName}</div>
+        <div style={{ fontSize: 12, color: "#888", marginTop: 2 }}>{bal}/{pur} used · {remaining} remaining</div>
+        {groupType === "couple" && <div style={{ fontSize: 11, color: "#7B1FA2", fontWeight: 600, marginTop: 4 }}>👥 Couple — each client billed 50%</div>}
+        {groupType === "trio" && <div style={{ fontSize: 11, color: "#7B1FA2", fontWeight: 600, marginTop: 4 }}>👥 Group of 3 — each client billed 1/3</div>}
+      </div>
+
+      {/* Package selection grouped by category */}
+      <div style={{ maxHeight: "40vh", overflow: "auto", marginBottom: 12 }}>
+        {Object.entries(categories).map(([cat, pkgs]) => (
+          <div key={cat} style={{ marginBottom: 10 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, padding: "4px 8px", background: "#F5F5F0", borderRadius: 6 }}>{cat}</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+              {pkgs.map(pkg => {
+                const isSel = selectedPkg === pkg;
+                const clientPrice = getClientPrice(pkg);
+                const divisor = getDivisor(pkg);
+                const hasSplit = divisor > 1;
+                return (
+                  <button key={pkg.label} onClick={() => setSelectedPkg(pkg)} style={{
+                    display: "flex", justifyContent: "space-between", alignItems: "center",
+                    padding: "10px 12px", borderRadius: 10, cursor: "pointer", textAlign: "left", width: "100%",
+                    background: isSel ? "#1B2A4A" : "white",
+                    color: isSel ? "white" : "#1a1a1a",
+                    border: `1.5px solid ${isSel ? "#1B2A4A" : "#DDD"}`,
+                  }}>
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: 13 }}>{pkg.label}</div>
+                      <div style={{ fontSize: 10, opacity: 0.7 }}>
+                        {pkg.monthly ? "monthly" : `$${Math.round(clientPrice / pkg.count)}/session`}
+                        {hasSplit && !isSel && <span> · full: ${pkg.price.toLocaleString()}</span>}
+                      </div>
+                    </div>
+                    <div style={{ textAlign: "right" }}>
+                      <div style={{ fontWeight: 800, fontSize: 15 }}>${clientPrice.toLocaleString()}{pkg.monthly ? <span style={{ fontSize: 10, opacity: 0.7 }}>/mo</span> : ""}</div>
+                      {hasSplit && <div style={{ fontSize: 9, opacity: 0.7 }}>{divisor === 2 ? "per person" : "each (1/3)"}</div>}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Custom note + preview + send */}
+      {selectedPkg && (
+        <>
+          <div style={{ marginBottom: 10 }}>
+            <label style={{ fontSize: 11, fontWeight: 600, color: "#888" }}>Personal note (optional)</label>
+            <textarea value={customNote} onChange={e => setCustomNote(e.target.value)}
+              placeholder="E.g. Great progress this month!"
+              style={{ width: "100%", marginTop: 4, padding: 8, borderRadius: 8, border: "1px solid #E0E0E0", fontSize: 13, fontFamily: "inherit", resize: "vertical", minHeight: 40, boxSizing: "border-box", background: "#FAFAF8" }} />
+          </div>
+
+          <div style={{ marginBottom: 12 }}>
+            <label style={{ fontSize: 11, fontWeight: 600, color: "#888" }}>Message preview</label>
+            <div style={{ marginTop: 4, padding: 12, borderRadius: 14, background: "#E8F5E9", fontSize: 13, lineHeight: 1.5, borderBottomLeftRadius: 4, whiteSpace: "pre-line" }}>
+              {(() => {
+                let msg = buildInvoiceText(clientName, selectedPkg, groupType);
+                if (customNote.trim()) msg = msg.replace("time to re-up!", `time to re-up! ${customNote.trim()}`);
+                return msg;
+              })()}
+            </div>
+          </div>
+
+          <button onClick={handleSend} style={{
+            width: "100%", padding: "13px", borderRadius: 10, border: "none", fontSize: 15, fontWeight: 700, cursor: "pointer",
+            background: client?.phone ? "linear-gradient(135deg, #1B2A4A, #2C3E6B)" : "#E0E0E0",
+            color: client?.phone ? "white" : "#999",
+          }}>
+            {client?.phone ? "Open in Messages →" : "Add phone number first"}
+          </button>
+        </>
+      )}
+    </Overlay>
   );
 }
 
